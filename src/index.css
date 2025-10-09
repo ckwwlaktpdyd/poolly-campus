@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flag-plant {
+  0% {
+    transform: translateY(-50px) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flag-wave {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes flag-gradient {
+  0% {
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  }
+  25% {
+    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #EAB308 0%, #CA8A04 100%);
+  }
+  75% {
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-flag-plant {
+  animation: flag-plant 0.8s ease-out;
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.animate-flag-wave {
+  animation: flag-wave 2s ease-in-out infinite;
+}
+
+.animate-flag-gradient {
+  animation: flag-gradient 3s ease-in-out infinite;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .text-xl {
+    font-size: 1.125rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+}
+
+/* 터치 피드백 개선 */
+button:active {
+  transform: scale(0.98);
+}
+
+/* 스크롤바 숨기기 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
